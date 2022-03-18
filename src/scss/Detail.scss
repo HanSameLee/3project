@@ -1,0 +1,38 @@
+
+
+$메인칼라 : #fff;
+
+.wow-enter { 
+    opacity: 0;
+}
+.wow-enter-active { 
+    opacity: 1;
+    transition: all 500ms;
+}
+
+
+
+.background {
+    p { color: $메인칼라;}
+}
+.my-alert { 
+    background-color: #eeeeee;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.my-alert2 { 
+    @extend .my-alert;
+    background-color: #ffe591;
+}
+
+.my-alert p { 
+    margin-bottom: 0;
+}
+
+.btn-blue { 
+    background-color: #0b5ed7;
+    border-color: #0d6efd;
+}
