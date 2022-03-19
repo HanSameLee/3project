@@ -30,16 +30,21 @@ function ConsultationBoard() {
 
     let [따봉, 따봉변경] = useState(0);
     let [댓글갯수, 댓글갯수변경] = useState(0);
-
+    let [모달박스, 모달박스변경] = useState('false');
 
     let [인덱스, 인덱스변경] = useState('');
+    // 인덱스별 게시판 글내용 등 빼오기 + 제목 클릭했을 대 모달창 보이는지 여부
+    // 내부는 셔터(i)를 통해 관리 및 변경
 
     function 셔터(i) {
-        if(인덱스===i) { 
-            인덱스변경(''), console.log({인덱스});
-        } else { 
-            인덱스변경(i),console.log({인덱스});
+        if (인덱스 === i) {
+            인덱스변경(''), console.log({ 인덱스 });
+        } else {
+            인덱스변경(i), console.log({ 인덱스 });
         }
+    }
+    function 글쓰기버튼(){
+
     }
 
     return (
@@ -52,6 +57,7 @@ function ConsultationBoard() {
                 <option value=''>제목▼</option>
                 <option value=''>조회수▼</option>
             </select>
+            <WritingBox/>
             <hr />
             {/* <div className="list">
                 <h3 onClick={ ()=>{셔터()} }>{글제목[0]} </h3>
@@ -95,6 +101,7 @@ function ConsultationBoard() {
 function ModalBox(props, a) {
     return (
         <div className='modalBox'>
+            <hr />
             <h2>{props.글제목[props.인덱스]}</h2>
             <p>{props.닉네임[props.인덱스]}</p>
             <p>날짜</p>
@@ -102,6 +109,22 @@ function ModalBox(props, a) {
             <p><span>👍</span>{props.따봉} <span> 🗨️</span>{props.댓글갯수}</p>
             <hr />
         </div>
+    )
+}
+
+function WritingBox(){ 
+    return(
+        <>
+        <div className='writingBox'>
+            <form>
+                <span>제목</span><input></input>
+                <br />
+                <span>내용</span><textarea></textarea>
+                <br />
+                <button className='btn btn-primary'>글작성</button><button className='btn btn-primary'>취소</button>
+            </form>
+        </div>
+        </>
     )
 }
 

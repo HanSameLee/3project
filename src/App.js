@@ -1,20 +1,23 @@
 /*eslint-disable */
-import { Navbar, Container, Nav, NavDropdown, Card, Button, Carousel } from 'react-bootstrap';
 
 import logo from './logo.svg';
 import './App.css';
-import React, { useContext, useState } from 'react';
-import Data from './data';
+import { Navbar, Container, Nav, NavDropdown, Card, Button } from 'react-bootstrap';
+import React, { useContext, useState} from 'react';
+import Data from './components/data';
 import Detail from './Detail';
 import axios from 'axios';
-import Cart from './Cart.js'
-import Login from './Login.js'
-import Join from './Join';
-import JoinCounselor from './JoinCounselor';
-import JoinCheck from './JoinCheck';
+import Cart from './components/Cart.js'
+import Login from './components/Login.js'
+import Join from './components/Join';
+import CounselorList from './components/CounselorList'
+import JoinCounselor from './components/JoinCounselor';
+import JoinCheck from './components/JoinCheck';
 import JoinSuccess from './JoinSuccess';
+import ConsultationBoard from './components/ConsultationBoard';
 
 import { Link, Route, Switch } from 'react-router-dom';
+import Board from './components/ConsultationBoard';
 
 let 재고context = React.createContext();
 
@@ -34,13 +37,10 @@ function App() {
               <Nav.Link as={Link} to="/login">로그인</Nav.Link>
               <Nav.Link as={Link} to='/joincheck'>회원가입</Nav.Link>
               <NavDropdown title="더보기" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">상담사 찾기</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">상담사례</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">해결사례</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">상담글 쓰기</NavDropdown.Item>
+                <NavDropdown.Item href="/CounselorList">상담사 찾기</NavDropdown.Item>
+                <NavDropdown.Item href="/ConsultationBoard">상담게시판 이동</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">공지사항</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">친구초대</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4">자주 묻는 질문</NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -49,46 +49,16 @@ function App() {
       </Navbar>
 
 
-{/* ddasdfds sdfs*/}
+
       <Switch>
         <Route exact path="/">
-        <Carousel>
-  <Carousel.Item  interval={100}>
-    <img
-      className="d-block w-10"
-      src="https://images.unsplash.com/photo-1563393934034-21b781d905ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aGVscHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src="https://images.unsplash.com/photo-1647125529760-a17654ff8b67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-      alt="Second slide"
-    />
-
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src="https://images.unsplash.com/photo-1647125529760-a17654ff8b67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-      alt="Third slide"
-    />
-
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-</Carousel>
+          <div>
+            <div className='main'>
+              <h1>지금 당신의 멘토를 만나보세요 </h1>
+              <p>This is a simple hero</p>
+              <Link to='CounselorList'><button type="button" class="btn btn-primary">멘토 보러가기</button></Link>
+            </div>
+          </div>
           <div className="cardBox">
             <Card style={{ width: '18rem' }}>
               <Card.Img variant="top" src="https://t3.ftcdn.net/jpg/02/96/14/12/240_F_296141290_axIr6vXVqslWHRadEVNUJwdLNjuGADgb.jpg" />
@@ -109,38 +79,92 @@ function App() {
                 <Card.Text>
                   상담받고 싶은 내용을 익명으로 작성해주시면 상담사가 답변해 드립니다
                 </Card.Text>
-                <Button variant="primary">사연 작성하기</Button>
+                <Link to ='ConsultationBoard'><Button variant="primary">상담게시판 이동</Button></Link>
               </Card.Body>
             </Card>
+          </div> 
+          {/* 카드박스 끝나는 부분 */}
+          <div className='partDiv'>
+            <h4>분야별 전문 상담사를 만나보세요</h4>
+            <div className='fieldBox'>
+              <div className='fieldCard'>
+                <img src='https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/2x/external-fever-fatigue-inipagistudio-mixed-inipagistudio.png'></img>
+                <p>우울증</p>
+              </div>
+              <div className='fieldCard'>
+                <img src='https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/2x/external-negative-thinking-mental-health-inipagistudio-mixed-inipagistudio.png'></img>
+                <p>스트레스관리</p>
+              </div>
+              <div className='fieldCard'>
+                <img src='https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/2x/external-burnout-mental-health-inipagistudio-mixed-inipagistudio.png'></img>
+                <p>분노조절장애</p>
+              </div>
+              <div className='fieldCard'>
+                <img src='https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/2x/external-bandage-immunization-awareness-inipagistudio-mixed-inipagistudio.png'></img>
+                <p>트라우마</p>
+              </div>
+              <div className='fieldCard'>
+                <img src='https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/2x/external-herd-immunity-immunization-awareness-inipagistudio-mixed-inipagistudio.png'></img>
+                <p>대인기피증</p>
+              </div>
+              <div className='fieldCard'>
+                <img src='https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/2x/external-friends-friendship-and-relationship-inipagistudio-mixed-inipagistudio.png'></img>
+                <p>불안증</p>
+              </div>
+              <div className='fieldCard'>
+                <img src='https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/2x/external-heart-mental-wellbeing-inipagistudio-mixed-inipagistudio.png'></img>
+                <p>애정결핍증</p>
+              </div>
+              <div className='fieldCard'>
+                <img src='https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/2x/external-group-friendship-and-relationship-inipagistudio-mixed-inipagistudio.png'></img>
+                <p>가정문제</p>
+              </div>
+              <div className='fieldCard'>
+                <img src='https://img.icons8.com/external-inipagistudio-mixed-inipagistudio/2x/external-consultation-mental-wellbeing-inipagistudio-mixed-inipagistudio.png'></img>
+                <p>성격개선</p>
+              </div>
+            </div>
           </div>
-          <button className='btn btn-primary' onClick={() => {
 
-            axios.post('서버URL', { id: 'codingapple', pw: 1234 });
+          <div className='partDiv'>
+            <h4>상황에 맞게 상담사와 다양한 내면상담</h4>
+            <div className='situationBox'>
+                <div className='situationCard'>
+                  <img src='https://images.unsplash.com/photo-1592890288564-76628a30a657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'></img>
+                  <h5><b>15분 전화상담</b></h5>
+                  <p>예약한 시간에 상담사로부터 전화가 옵니다.</p>
+                  <br />
+                  <a href='#'><b>상담 신청하기 ></b></a>
+                </div>
+                <div className='situationCard'>
+                <img src='https://images.unsplash.com/photo-1493804714600-6edb1cd93080?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'></img>
+                  <h5><b>20분 영상상담</b></h5>
+                  <p>상담원 방문이 어렵다면 영상상담으로 서로 마주보고 상담하세요.</p>
+                  <a href='#'><b>상담 신청하기 ></b></a>
+                </div>
+                <div className='situationCard'>
+                <img src='https://images.unsplash.com/photo-1590650624342-f527904ca1b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'></img>
+                  <h5><b>30분 방문상담</b></h5>
+                  <p>복잡한 사안이라면, 변호사 사무실로 방문하여 더 확실하고 깊이있게 상담을 받아보세요</p>
+                  <a href='#'><b>상담 신청하기 ></b></a>
+                </div>
+              </div>
+            </div>
 
-            axios.get('https://codingapple1.github.io/shop/data2.json')
-              .then((result) => {
-                console.log(result.data);
-                shoes변경([...shoes, ...result.data]);
-              })
-              .catch(() => {
-                console.log('실패했어요 ㅜㅜ');
-              })
 
-          }}>더보기</button>
+
+
+
+          {/* 컴포넌트 페이지 부분 */}
         </Route>
         <Route path="/detail/:id">
           <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
         </Route>
-
-
+        <Route path="/login">
+          <Login></Login>
+        </Route>
         <Route path="/JoinCheck">
           <JoinCheck></JoinCheck>
-        </Route>
-        <Route path="/login">
-          <Login></Login>
-        </Route>
-        <Route path="/login">
-          <Login></Login>
         </Route>
         <Route path="/join">
           <Join></Join>
@@ -148,7 +172,7 @@ function App() {
         <Route path="/joinCounselor">
           <JoinCounselor></JoinCounselor>
         </Route>
-        <Route path="/joinSuccess">
+        <Route path="/JoinSuccess">
           <JoinSuccess></JoinSuccess>
         </Route>
 
@@ -157,14 +181,21 @@ function App() {
         <Route path="/cart">
           <Cart></Cart>
         </Route>
-
+        <Route path="/CounselorList">
+          <CounselorList></CounselorList>
+        </Route>
+        <Route>
+          <ConsultationBoard></ConsultationBoard>
+        </Route>
         <Route path="/:pw">
           <div>아무거나적었을때 내가 나타난단다</div>
         </Route>
+
+        
       </Switch>
 
-    </div>
-
+    </div> 
+// function app div 끝나는 부분
   );
 }
 

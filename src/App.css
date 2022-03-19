@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@font-face {
+  font-family: 'ROKAFSansBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {margin : 0; padding: 0; box-sizing: border-box;}
 
@@ -43,10 +49,10 @@
   }
 }
 
-.background { 
+.main { 
   height: 20%;
   padding: 20px;
-  background-image: url('./background.jpg');
+  background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
   background-size: cover;
   color: white;
 }
@@ -59,17 +65,71 @@ button {
 .col-md-4 img{ 
   margin-top: 10px;
 }
-
+/* 상단 감정분석 서비스, 전문상담 게시판 두개의 카드를 감싸는 div */
 .cardBox { 
   margin-top: 40px;
   margin-bottom: 40px;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
- .Carousel > .item > img { 
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 400px;
- }
+.fieldBox { 
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+  .fieldCard:hover{
+      cursor: pointer;
+  }
+
+
+    .fieldCard img{
+      width: 5rem;
+    }
+
+
+    .partDiv { 
+      margin-top: 5rem;
+    }
+
+    /* 분야별, 상황별 헤더글씨부분 */
+    h4{
+      font-family: ROKAFSansBold;
+      text-align: left;
+      margin-left: 20px;
+    }
+    
+/* 상황에 맞게 상담사와 다양한 내면상담 */
+    /* 전체 감싸고 있는 div박스 */
+    .situationBox { 
+      display: flex;
+      justify-content: center;
+    }
+      .situationCard{
+        width: 20rem;
+        margin-left: 20px;
+        text-align: left;
+      }
+        .situationCard img{
+          width: 300px;
+          height: 300px;
+          object-fit: contain;
+          margin-bottom: 0;
+        }
+        .situationCard a{ 
+          text-decoration: none;
+          color: #0b5ed7;
+          font-size: 13px;
+        }
+        .situationCard a b { 
+          color: #0b5ed7;
+        }
+
+
+
+
+

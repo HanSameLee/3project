@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components'
-import './Detail.scss'
+import './scss/Detail.scss'
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import {CSSTransition} from 'react-transition-group';
 import { connect } from 'react-redux';
