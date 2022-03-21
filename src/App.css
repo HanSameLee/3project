@@ -49,13 +49,26 @@
   }
 }
 
+/* 메인페이지 상단 배너 */
 .main { 
-  height: 20%;
+  height: 16rem;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
   background-size: cover;
   color: white;
 }
+  .main h1{ 
+    font-size: 3rem;
+  }
+  .main p { 
+    font-size: 2rem;
+  }
+  .main button { 
+    font-size: 1rem;
+  }
 
 
 button { 
@@ -70,33 +83,54 @@ button {
   margin-top: 40px;
   margin-bottom: 40px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: flex-start;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fieldBox { 
   margin-top: 40px;
   margin-bottom: 40px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+/* 우울증, 스트레스관리, 트라우마, 대인기피증, 불안증, 애정결핍증, 가정문제, 성격개선 */
   .fieldCard:hover{
       cursor: pointer;
   }
-
-
-    .fieldCard img{
-      width: 5rem;
+  .fieldCard { 
+    background-color: #0d6efd;
+    font-weight: bold;
+    width: 19.4rem;
+    border-radius: 8px;
+  }
+    .fieldCard p {
+      margin-top: 5px;
+      color: #fff;
+      margin-top: 15px;
     }
 
 
+    /* 배너 밑 두개 카드 레이아웃 아래 부분 큰 덩어리를 감싸는 박스 */
     .partDiv { 
+      margin-left: auto;
+      margin-right: auto;
       margin-top: 5rem;
+      width: 80%;
     }
 
-    /* 분야별, 상황별 헤더글씨부분 */
+    /* 분야별 전문 상담사를 만나보세요 + 
+    상황에 맞게 상담사와 다양한 내면상담 */
     h4{
       font-family: ROKAFSansBold;
       text-align: left;

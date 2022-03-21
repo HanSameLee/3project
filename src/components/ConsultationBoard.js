@@ -164,6 +164,13 @@ function ModalBox(props, a) {
     )
 }
 
+function Modal박스(){
+    return(
+            <></>
+        
+    )
+}
+
 function WritingBox(props){ 
     return(
         <>

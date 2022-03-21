@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.titleHeader { 
+    font-family: 'GmarketSansBold';
+    padding: 10px;
+}
+.titleName {
+    font-family: 'GmarketSansBold';
+    padding: 10px;
+    text-align: left;
+}
+.titleImg { 
+    background-image: url('https://cdn.imweb.me/thumbnail/20200730/d274d8cfe6cf3.jpg');
+
+}
+
+.section { 
+    }
+    .section img { 
+        width: 20rem;
+    }
+    .sss { 
+        display: table-cell;
+        vertical-align: middle;    
+    }    
+    .fff {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.columnBox{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40rem;
+    text-align: left;
+    padding: 5px;
+}
+
+.attribute{
+    margin-top: 50px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+    .attribute button{ 
+        display: block;
+        margin: auto;
+    }
+
+
