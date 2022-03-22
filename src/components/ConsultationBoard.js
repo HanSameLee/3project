@@ -181,7 +181,7 @@ function WritingBox(props){
                 <div className='writingMiniBox'>내용</div>
                 <div className='writingMiniBox'><textarea></textarea></div>
                 <div className='writingMiniBox'>
-                    <button type='submit' className='btn btn-primary'>글쓰기</button>
+                    <button type='submit' className='btn btn-primary's>글쓰기</button>
                     <button type='button' className='btn btn-primary' onClick={()=>{props.글쓰기버튼('false')}} >취소</button>
                     </div>
             </div>

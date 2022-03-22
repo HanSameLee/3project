@@ -56,7 +56,7 @@ function CounselorListDetails() {
                 불안<br />
             </div>
             <div className='columnBox attribute itemCenter'>
-                <button className='btn btn-primary'>상담예약하기</button>
+                <Link to='reservation'><button className='btn btn-primary'>상담예약하기</button></Link>
             </div>
         </>
     )

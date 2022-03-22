@@ -4,7 +4,6 @@ import logo from './logo.svg';
 import './App.css';
 import { Navbar, Container, Nav, NavDropdown, Card, Button } from 'react-bootstrap';
 import React, { useContext, useState } from 'react';
-import Detail from './Detail';
 import axios from 'axios';
 import Cart from './components/Cart.js'
 import Login from './components/Login.js'
@@ -15,6 +14,12 @@ import JoinCheck from './components/JoinCheck';
 import JoinSuccess from './JoinSuccess';
 import ConsultationBoard from './components/ConsultationBoard';
 import CounselorListDetails from './components/CounselorListDetails';
+import Reservation from './components/Reservation';
+import ReservationEmail from './components/ReservationEmail';
+import ReservationCall from './components/ReservationCall';
+import ReservationVideo from './components/ReservationVideo';
+import ReservationVisit from './components/ReservationVisit';
+
 
 import { Link, Route, Switch } from 'react-router-dom';
 
@@ -190,12 +195,25 @@ function App() {
         <Route path="/ConsultationBoard">
           <ConsultationBoard></ConsultationBoard>
         </Route>
-
-        <Route path="/:pw">
-          <div>아무거나적었을때 내가 나타난단다</div>
+        <Route path="/reservation">
+          <Reservation></Reservation>
+        </Route>
+        <Route path="/ReservationEmail">
+          <ReservationEmail></ReservationEmail>
+        </Route>
+        <Route path="/ReservationCall">
+          <ReservationCall></ReservationCall>
+        </Route>
+        <Route path="/ReservationVideo">
+          <ReservationVideo></ReservationVideo>
+        </Route>
+        <Route path="/ReservationVisit">
+          <ReservationVisit></ReservationVisit>
         </Route>
 
-
+        <Route path="/:pw">
+          <div>잘못된 경로로 접근하셨습니다.</div>
+        </Route>
       </Switch>
 
     </div>
