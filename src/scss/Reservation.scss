@@ -1,0 +1,23 @@
+
+$input넓이 : 21rem;
+
+
+.reservation{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-top: 10rem;
+}
+
+    .ReservationTime{ 
+        width: 3rem;
+    } //~시 ~분 입력할 때 input칸
+
+    .reservationDate { 
+        width: $input넓이;
+        height: 2rem;
+    } 
+
+    .inputBar { 
+        width: $input넓이;
+    }   
+

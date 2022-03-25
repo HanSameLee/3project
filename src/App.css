@@ -146,6 +146,7 @@ button {
       .situationCard{
         width: 20rem;
         margin-left: 20px;
+        margin-bottom: 100px;
         text-align: left;
       }
         .situationCard img{

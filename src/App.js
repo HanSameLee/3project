@@ -15,10 +15,8 @@ import JoinSuccess from './JoinSuccess';
 import ConsultationBoard from './components/ConsultationBoard';
 import CounselorListDetails from './components/CounselorListDetails';
 import Reservation from './components/Reservation';
-import ReservationEmail from './components/ReservationEmail';
-import ReservationCall from './components/ReservationCall';
-import ReservationVideo from './components/ReservationVideo';
-import ReservationVisit from './components/ReservationVisit';
+import ReservationSuccess from './components/ReservationSuccess';
+import QnA from './components/QnA';
 
 
 import { Link, Route, Switch } from 'react-router-dom';
@@ -40,10 +38,8 @@ function App() {
               <Nav.Link as={Link} to='/joincheck'>회원가입</Nav.Link>
               <NavDropdown title="더보기" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/CounselorList">상담사 찾기</NavDropdown.Item>
-                <NavDropdown.Item href="/ConsultationBoard">상담게시판 이동</NavDropdown.Item>
+                <NavDropdown.Item href="/ConsultationBoard">익명상담게시판 이동</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">공지사항</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">자주 묻는 질문</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4">소개글</NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -198,18 +194,14 @@ function App() {
         <Route path="/reservation">
           <Reservation></Reservation>
         </Route>
-        <Route path="/ReservationEmail">
-          <ReservationEmail></ReservationEmail>
+        <Route path="/ReservationSuccess">
+          <ReservationSuccess></ReservationSuccess>
         </Route>
-        <Route path="/ReservationCall">
-          <ReservationCall></ReservationCall>
+        <Route path="/QnA">
+          <QnA></QnA>
         </Route>
-        <Route path="/ReservationVideo">
-          <ReservationVideo></ReservationVideo>
-        </Route>
-        <Route path="/ReservationVisit">
-          <ReservationVisit></ReservationVisit>
-        </Route>
+
+
 
         <Route path="/:pw">
           <div>잘못된 경로로 접근하셨습니다.</div>
