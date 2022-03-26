@@ -17,14 +17,15 @@ import CounselorListDetails from './components/CounselorListDetails';
 import Reservation from './components/Reservation';
 import ReservationSuccess from './components/ReservationSuccess';
 import QnA from './components/QnA';
-
-
 import { Link, Route, Switch } from 'react-router-dom';
-
-let 재고context = React.createContext();
+import Result from './components/Result';
 
 function App() {
 
+  function logout(){
+    sessionStorage.clear();
+    window.location.replace("/")
+  }
 
   return (
     <div className="App">
@@ -34,12 +35,15 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/login">로그인</Nav.Link>
-              <Nav.Link as={Link} to='/joincheck'>회원가입</Nav.Link>
+              {sessionStorage.length===0 ? <Nav.Link as={Link} to="/login">로그인</Nav.Link> :
+               <Nav.Link as={Link} to="./" onClick={logout}>로그아웃</Nav.Link> }
+               {sessionStorage.length===0 ? <Nav.Link as={Link} to='/joincheck'>회원가입</Nav.Link>:<Nav.Link>{sessionStorage.NAME}님</Nav.Link> }
               <NavDropdown title="더보기" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/CounselorList">상담사 찾기</NavDropdown.Item>
-                <NavDropdown.Item href="/ConsultationBoard">익명상담게시판 이동</NavDropdown.Item>
+                <NavDropdown.Item href="/ConsultationBoard">상담게시판 이동</NavDropdown.Item>
                 <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">공지사항</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4">자주 묻는 질문</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4">소개글</NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -69,7 +73,7 @@ function App() {
                   QnA를 통한 텍스트 감정분석으로 <br />
                   현재 심리상태를 분석해드립니다
                 </Card.Text>
-                <Button variant="primary">진단받기</Button>
+                <Link to="QnA"><Button variant="primary">진단받기</Button></Link>
               </Card.Body>
             </Card>
 
@@ -81,7 +85,7 @@ function App() {
                   다양한 분야의 상담사분들이 <br />
                   여러분의 마음상태를 진단해드립니다
                 </Card.Text>
-                <Link to="CounselorList"><Button variant="primary">진단받기</Button></Link>
+                <Link to="CounselorList"><Button variant="primary">상담사 보러가기</Button></Link>
               </Card.Body>
             </Card>
 
@@ -135,26 +139,26 @@ function App() {
                 <img src='https://images.unsplash.com/photo-1488998527040-85054a85150e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'></img>
                 <h5><b>이메일 상담</b></h5>
                 <p>오프라인 상담을 원하신다면 상담소로 방문하여 더 확실하고 깊이있게 상담을 받아보세요</p>
-                <a href='/CounselorList'><b>상담 신청하기 ></b></a>
+                <a href='/CounselorList'><b>상담 신청하기</b></a>
               </div>
               <div className='situationCard'>
                 <img src='https://images.unsplash.com/photo-1592890288564-76628a30a657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'></img>
                 <h5><b>15분 전화상담</b></h5>
                 <p>예약한 시간에 상담사로부터 전화가 옵니다.</p>
                 <br />
-                <a href='/CounselorList'><b>상담 신청하기 ></b></a>
+                <a href='/CounselorList'><b>상담 신청하기</b></a>
               </div>
               <div className='situationCard'>
                 <img src='https://images.unsplash.com/photo-1493804714600-6edb1cd93080?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'></img>
                 <h5><b>20분 영상상담</b></h5>
                 <p>상담원 방문이 어렵다면 영상상담으로 서로 마주보고 상담하세요.</p>
-                <a href='/CounselorList'><b>상담 신청하기 ></b></a>
+                <a href='/CounselorList'><b>상담 신청하기</b></a>
               </div>
               <div className='situationCard'>
                 <img src='https://images.unsplash.com/photo-1590650624342-f527904ca1b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'></img>
                 <h5><b>30분 방문상담</b></h5>
                 <p>오프라인 상담을 원하신다면 상담소로 방문하여 더 확실하고 깊이있게 상담을 받아보세요</p>
-                <a href='/CounselorList'><b>상담 신청하기 ></b></a>
+                <a href='/CounselorList'><b>상담 신청하기</b></a>
               </div>
 
             </div>
@@ -199,6 +203,9 @@ function App() {
         </Route>
         <Route path="/QnA">
           <QnA></QnA>
+        </Route>
+        <Route path="/Result">
+          <Result></Result>
         </Route>
 
 

@@ -194,8 +194,8 @@ function WritingBox(props) {
                 <div className='writingBox'>
                     <div className='writingMiniBox'>제목</div>
                     <div className='writingMiniBox'><input onChange={(e) => { props.입력제목변경(e.target.value), console.log(props.입력제목) }}></input></div>
-                    <div className='writingMiniBox'>닉네임</div>
-                    <div className='writingMiniBox' ><input onChange={(e) => { props.입력닉네임변경(e.target.value), console.log(props.입력닉네임) }}></input></div>
+                    <div className='writingMiniBox'>이름</div>
+                    <div className='writingMiniBox' ><input value={sessionStorage.NAME} onChange={(e) => { props.입력닉네임변경(e.target.value), console.log(props.입력닉네임) }}></input></div>
                     <div className='writingMiniBox'>내용</div>
                     <div className='writingMiniBox'><textarea onChange={(e) => { props.입력내용변경(e.target.value), console.log(props.입력내용) }}></textarea></div>
                     <div className='writingMiniBox'>
