@@ -3,6 +3,7 @@
 import '../scss/ConsultationBoard.scss'
 import React, { useState } from 'react';
 import { Modal } from 'bootstrap';
+import { Link, Route, Switch } from 'react-router-dom';
 
 function ConsultationBoard() {
 

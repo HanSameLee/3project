@@ -2,6 +2,7 @@ import { useState } from "react";
 import $ from 'jquery';
 import '../scss/Reservation.scss'
 import ReservationSuccess from './ReservationSuccess'
+import { Link, Route, Switch } from 'react-router-dom';
 
 
 
@@ -64,7 +65,7 @@ function ReservationEmail(props) {
                 <p><b>이메일을 보내실 날짜를 선택해주세요.</b></p>  
                 <input type="date" name="date" className="reservationDate" onChange={(e)=>{props.날짜변경(e.target.value); console.log(e.target.value)}}></input><br/><br/>
                 {/* 선택완료버튼, 삼항연산자 연계 */}
-                <button className="btn btn-primary" type="submit" 
+                <Link to='/ReservationSuccess'><button className="btn btn-primary" type="submit" 
                 onClick=
                 {(e)=>{
                  props.이메일 === ''
@@ -72,8 +73,8 @@ function ReservationEmail(props) {
                  : console.log('이메일입력완료') ||
                  props.날짜 === ''
                  ? alert('상담일을 선택해주세요!') || e.preventDefault()
-                 : console.log('날짜입력완료') || <ReservationSuccess></ReservationSuccess>
-                }}>선택완료</button> 
+                 : console.log('날짜입력완료')
+                }}>선택완료</button></Link>
                 
                 <button className="btn btn-primary" type="reset">초기화</button>
             </form>
