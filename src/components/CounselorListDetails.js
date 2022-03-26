@@ -8,11 +8,11 @@ function CounselorListDetails() {
 
     return (
         <>
-            <div className='section fff'>
-                <div className='section titleImage'><img src='https://cdn.imweb.me/thumbnail/20200730/d274d8cfe6cf3.jpg'></img></div>
+            <div className='section ddd'>
+                <div className='section titleImage'><img src='https://smhrd.or.kr/wp-content/uploads/2022/02/nyh.png'></img></div>
                 <div className='section sss'>
-                    <div className='titleHeader'><h1>마음소리심리상담센터</h1></div>
-                    <div className='titleName'><h2>김현주 선생님</h2></div>
+                    <div className='titleHeader'><h1>SMHRD 심리상담센터</h1></div>
+                    <div className='titleName'><h2>나예호 선생님</h2></div>
                 </div>
             </div>
 
@@ -20,7 +20,7 @@ function CounselorListDetails() {
                 인삿말
             </div>
             <div className='columnBox'>
-                "상담은 잊어왔던 나와 만나는 시간이다"라고 정의하고 싶어요.
+                "상담은 잊어왔던 나와 만나는 시간이다"라고 합니다.
                 <br></br>
                 때로는 저와 마주앉은 내담자분들이 성당에서 고해성사를 하는 심정으로 그간 꼭꼭 묻어두었던 가슴 속의 이야기들을 꺼내는 모습을 봅니다. 사람들에게 표면에 드러나 만나기 즐거워하는 자신의 모습도 있지만, 어둠 속에 방치해두었던 자신의 일부도 존재합니다. 내담자가 만나기 싫어했던 바로 그 모습이 내담자를 괴롭히는 인격의 한 부분이 됩니다.<br /><br />
                 상담자는 비판이나 편견이 없는 맑은 거울이 되어서 내담자가 그 속에 비친 자신의 모습을 들여댜보고, 마주할 수 있도록 돕습니다. 거울 속에 비친 민낯 속에는 숨기고 싶었던 흉터도 잡티도 주름도 어쩔 수 없이 비추일 때가 있지만, 상담자가 그 빈 거울 속에 비친 모습을 그냥 그대로 받아들일 때 내담자도 자기 모습을 비로소 수용하게 됩니다. 거울 속에 비친 잡티조차도 사랑스럽게 느껴질 때 세상을 살아갈 힘이 생깁니다. 상담이 현재의 자신을 있는 그대로 마주하고 받아들이는 과정이 되고, 그러한 과정을 통해 원하는 삶의 모습으로 변화하는 시간이 되었으면 좋겠습니다.<br /><br />
@@ -31,15 +31,15 @@ function CounselorListDetails() {
             </div>
             <div className='columnBox'>
 
-                임상심리학 석사(성신여대/게슈탈트 심리치료 전공)<br />
-                경북대학교 학사<br /><br />
+                SMHRD 임상심리학 석사(성신여대/게슈탈트 심리치료 전공)<br />
+                SMHRD 대학교 학사<br /><br />
 
-                상담심리사 1급<br />
-                국가기술 임상심리사 1급<br />
-                청소년상담사 2급<br />
-                게슈탈트 상담심리사 1급<br />
-                ADHD 치료전문가<br />
-                미술치료사 1급000
+                SMHRD 주관 상담심리사 1급<br />
+                SMHRD 주관 임상심리사 1급<br />
+                SMHRD 주관 청소년상담사 2급<br />
+                SMHRD 주관 게슈탈트 상담심리사 1급<br />
+                SMHRD 주관 ADHD 치료전문가<br />
+                SMHRD 주관 미술치료사 1급000
             </div>
             <div className='columnBox attribute'>
                 전문상담분야
